@@ -1,0 +1,45 @@
+<div class="sticky top-0 z-30 w-full bg-gray-900 dark:bg-black">
+  <div class="relative mx-auto max-w-6xl px-4">
+    <!-- Subtle Accent Line -->
+    <div
+      class="absolute inset-x-0 -bottom-3 h-px bg-linear-to-r from-transparent via-blue-500/40 to-transparent"
+    ></div>
+
+    <!-- Filter Row -->
+    <div
+      class="flex gap-3 py-4 overflow-x-auto hide-scrollbar"
+      role="tablist"
+      aria-label="Project filters"
+    >
+      <!-- ALL -->
+      <button
+        type="button"
+        role="tab"
+        [attr.aria-selected]="selected === 'ALL'"
+        (click)="select('ALL')"
+        class="whitespace-nowrap rounded-md px-4 py-2 border border-white/10 text-gray-600 dark:text-gray-400 bg-gray-900 dark:bg-black transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 hover:bg-blue-500/30 hover:text-gray-900 dark:text-white"
+        [ngClass]="{
+          'bg-blue-500/40 text-gray-900 dark:text-white border-blue-500/40': selected === 'ALL',
+        }"
+      >
+        All Projects
+      </button>
+
+      <!-- Project Filters -->
+      <button
+        *ngFor="let project of projects"
+        type="button"
+        role="tab"
+        [attr.aria-selected]="selected === project.slug"
+        (click)="select(project.slug)"
+        class="whitespace-nowrap rounded-md px-4 py-2 border border-blue-500/60 text-gray-100 bg-gray-900 dark:bg-black transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 hover:bg-blue-500/30 hover:text-gray-900 dark:text-white"
+        [ngClass]="{
+          'bg-blue-500/40 text-gray-900 dark:text-white border-blue-500/40':
+            selected === project.slug,
+        }"
+      >
+        {{ project.title }}
+      </button>
+    </div>
+  </div>
+</div>

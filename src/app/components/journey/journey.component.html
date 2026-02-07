@@ -1,0 +1,59 @@
+<section class="min-h-screen bg-black px-14 py-6" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto flex flex-col gap-20">
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-4" data-aos="fade-right" data-aos-delay="100">
+        <span class="w-10 h-0.75 bg-blue-500/40"></span>
+        The Journey
+      </h2>
+
+      <p class="text-gray-300 leading-relaxed mb-6 max-w-xl" data-aos="fade-up" data-aos-delay="200">
+        With over
+        <span class="text-white font-semibold">1 years of experience</span>
+        in full-stack development, I specialize in building
+        <span class="text-white font-semibold">
+          robust, scalable architectures
+        </span>
+        that never compromise on user experience.
+      </p>
+
+      <p class="text-gray-400 leading-relaxed max-w-xl" data-aos="fade-up" data-aos-delay="300">
+        My approach blends analytical engineering with a sharp eye for high-end
+        aesthetics, ensuring every line of code delivers value.
+      </p>
+    </div>
+
+    <!-- Frontend Expertise -->
+    <!-- Frontend Expertise -->
+    <div>
+      <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-6 flex items-center gap-4" data-aos="fade-right"
+        data-aos-delay="400">
+        <span class="w-8 h-0.5 bg-blue-500/40 shrink-0"></span>
+        Frontend Expertise
+      </h3>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 overflow-x-hidden"
+        data-aos="fade-up" data-aos-delay="500">
+        <app-skill-card *ngFor="let skill of frontendSkills; let i = index" [icon]="skill.icon" [label]="skill.label"
+          data-aos="zoom-in" [attr.data-aos-delay]="i * 80"></app-skill-card>
+      </div>
+    </div>
+
+    <!-- Backend Expertise -->
+    <div>
+      <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-6 flex items-center gap-4" data-aos="fade-right"
+        data-aos-delay="600">
+        <span class="w-8 h-0.5 bg-blue-500/40 shrink-0"></span>
+        Backend Expertise
+      </h3>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 overflow-x-hidden"
+        data-aos="fade-up" data-aos-delay="700">
+        <app-skill-card *ngFor="let skill of backendSkills; let i = index" [icon]="skill.icon" [label]="skill.label"
+          data-aos="zoom-in" [attr.data-aos-delay]="i * 80"></app-skill-card>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+<nav
+  class="fixed top-0 left-0 w-full max-w-full overflow-x-hidden bg-black/90 backdrop-blur-md border-b border-white/10 z-50 p-2 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-2 cursor-pointer">
+      <div class="w-10 h-10 rounded-lg bg-blue-500/40 flex items-center justify-center font-bold text-white text-sm">
+        MH
+      </div>
+      <span class="text-white font-bold text-lg tracking-wide">Muhammad
+        Hassan</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex gap-4 lg:gap-8 text-gray-300 flex-wrap">
+      <a routerLink="/" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-500/40 transition">Home</a>
+      <a routerLink="/skills" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-500/40 transition">Skills</a>
+      <a routerLink="/projects" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-500/40 transition">Projects</a>
+      <a routerLink="/contact" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-500/40 transition">Contact</a>
+      <a routerLink="/experience" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-500/40 transition">Experience</a>
+      <a href="/assets/Muhammad_Hassan_Resume.pdf" class="hover:text-blue-500/40 transition">Resume</a>
+    </div>
+
+
+    <!-- Mobile Hamburger -->
+
+    <div class="md:hidden flex items-center shrink-0">
+      <button (click)="isOpen = !isOpen"
+        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-300 hover:text-blue-500/40 transition">
+        <svg *ngIf="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg *ngIf="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isOpen" class="md:hidden bg-black/95 backdrop-blur-md border-t transition-all duration-300 ease-in-out">
+    <div class="flex flex-col gap-4 px-6 py-6 text-gray-300">
+      <a routerLink="/" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isOpen = false" class="hover:text-blue-500/40 transition">Home</a>
+      <a routerLink="/skills" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isOpen = false" class="hover:text-blue-500/40 transition">Skills</a>
+      <a routerLink="/projects" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isOpen = false" class="hover:text-blue-500/40 transition">Projects</a>
+      <a routerLink="/contact" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isOpen = false" class="hover:text-blue-500/40 transition">Contact</a>
+      <a routerLink="/experience" routerLinkActive="text-blue-500/70" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isOpen = false" class="hover:text-blue-500/40 transition">Experience</a>
+      <!-- <a
+        href="/assets/Muhammad_Hassan_Resume.pdf"
+        (click)="isOpen = false"
+        class="hover:text-blue-500/40 transition"
+        >Resume</a
+      > -->
+
+      <a href="/assets/Muhammad_Hassan_Resume.pdf" class="hover:text-blue-500/40 transition">Resume</a>
+    </div>
+  </div>
+</nav>

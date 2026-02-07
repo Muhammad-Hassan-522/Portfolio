@@ -1,0 +1,46 @@
+<section class="max-w-5xl mx-auto px-4 py-12 border-b border-neutral-800">
+  <!-- Title -->
+  <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+    {{ project.title }}
+  </h2>
+
+  <!-- Short Description -->
+  <p class="text-neutral-400 mb-6">
+    {{ project.description }}
+  </p>
+
+  <!-- Tech Stack -->
+  <div class="flex flex-wrap gap-2 mb-8">
+    <span *ngFor="let tech of project.techStack" class="p-3 rounded-md bg-neutral-800 text-neutral-200 text-sm">
+      {{ tech }}
+    </span>
+  </div>
+
+  <!-- Full Description -->
+  <div class="text-neutral-300 leading-relaxed mb-8 whitespace-pre-line">
+    {{ project.fullDescription }}
+  </div>
+
+  <!-- Features -->
+  <div class="mb-8">
+    <h3 class="text-lg font-semibold text-white mb-3">Key Features</h3>
+    <ul class="list-disc list-inside space-y-2 text-neutral-300">
+      <li *ngFor="let feature of project.features">
+        {{ feature }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Actions -->
+  <div class="flex gap-4">
+    <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank"
+      class="px-5 py-2 rounded-lg text-gray-900 dark:text-white bg-blue-500/40 hover:bg-gray-700/40 transition">
+      View GitHub
+    </a>
+
+    <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank"
+      class="px-5 py-2 rounded-lg text-gray-900 dark:text-white bg-blue-500/40 hover:bg-gray-700/40 transition">
+      Demo
+    </a>
+  </div>
+</section>

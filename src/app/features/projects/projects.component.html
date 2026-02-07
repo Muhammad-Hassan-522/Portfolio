@@ -1,0 +1,44 @@
+<section class="bg-gray-900 dark:bg-black min-h-screen px-6 py-20">
+  <div class="max-w-7xl mx-auto">
+    <!-- SECTION HEADER -->
+    <div class="mb-14 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        My <span class="text-blue-500/70">Creations</span>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+        A curated selection of projects demonstrating my ability to design,
+        build, and deliver scalable, user-focused software solutions.
+      </p>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="mb-10 sm:mb-16">
+      <app-project-filter
+        [projects]="allProjects"
+        (filterChange)="onFilterChange($event)"
+      >
+      </app-project-filter>
+    </div>
+
+    <!-- PROJECT DISPLAY AREA -->
+    <div class="space-y-16">
+      <!-- ALL PROJECTS -->
+      <ng-container *ngIf="selectedProject === 'ALL'">
+        <div class="grid gap-16">
+          <app-project-card
+            *ngFor="let project of allProjects"
+            [project]="project"
+          >
+          </app-project-card>
+        </div>
+      </ng-container>
+
+      <!-- SINGLE PROJECT -->
+      <ng-container *ngIf="selectedProject !== 'ALL' && selectedProjectData">
+        <div class="max-w-5xl mx-auto">
+          <app-project-card [project]="selectedProjectData"> </app-project-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

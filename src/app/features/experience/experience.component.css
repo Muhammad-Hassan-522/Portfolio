@@ -1,0 +1,5 @@
+/* Optional: smooth card hover */
+div:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
