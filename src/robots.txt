@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://muhammad-hassan-portfolio.netlify.app/sitemap.xml
